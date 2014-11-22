@@ -1,0 +1,24 @@
+
+module Counter(clock, reset, counter_enable, counterOut);
+//input
+	input clock ;
+	input reset ;
+	input stop ;
+//output
+	output [15:0] counterOut ;
+
+	reg [15:0] counterOut ;
+	
+
+	always @ (posedge clock)
+	begi
+		if (reset) begin
+			counterOut <= 16'h0000;
+		end
+
+		else if (counter_enable) begin
+			counterOut <=  counterOut + 1;
+		end
+	end
+endmodule
+
